@@ -8,8 +8,8 @@ for (var i = bugs.length - 1; i >= 0; i--) {
 
 function make_commit_block(commit){
   return '<div class="panel panel-default">' +
-'      <div class="panel-heading">'+ commit.subject +'<div style="float:right;"><a href="https://github.com/openstack/designate/commit/'+commit.sha+'"><code>'+ commit.sha +'</code></a></div></div>' +
-'      <div class="panel-body">' +
+'      <div class="panel-heading">'+ commit.subject +'<div style="float:right;"><a href="https://github.com/openstack/designate/commit/'+commit.sha+'"><code>'+ commit.sha +'</code></a>    <a role="button" data-toggle="collapse" href="#commit_'+commit.sha+'" aria-expanded="false" aria-controls="commit_'+commit.sha+'">Details</a></div></div>' +
+'      <div class="panel-body collapse" id="commit_'+commit.sha+'">' +
 make_commit_body(commit) +
 '      </div>' +
 '    </div>';
@@ -40,8 +40,8 @@ function make_commit_file_row(file){
 
 function make_bug_block(bug){
   return '<div class="panel panel-default">' + 
-            '<div class="panel-heading">'+bug.title+' '+make_bug_tags(bug)+'<div style="float:right"> <a href="'+bug.web_link+'">#'+bug.id+'</a></div></div>' +
-            '<div class="panel-body"><h6>Description:</h6><small>' +
+            '<div class="panel-heading">'+bug.title+' '+make_bug_tags(bug)+'<div style="float:right"> <a href="'+bug.web_link+'">#'+bug.id+'</a>   <a role="button" data-toggle="collapse" href="#bug_'+bug.id+'" aria-expanded="false" aria-controls="bug_'+bug.id+'">Details</a></div></div>' +
+            '<div class="panel-body collapse" id="bug_'+bug.id+'"><h6>Description:</h6><small>' +
             bug.description
             '<small/></div>' +
             '<div class="panel-footer"><strong>Reporter: </strong>'+bug.owner+'</div>' +
