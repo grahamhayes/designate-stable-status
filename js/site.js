@@ -8,7 +8,7 @@ for (var i = bugs.length - 1; i >= 0; i--) {
 
 function make_commit_block(commit){
   return '<div class="panel panel-default">' +
-'      <div class="panel-heading">'+ commit.subject +'<div style="float:right;"><a href="https://github.com/openstack/designate/commit/'+commit.sha+'"><code>'+ commit.sha +'</code></a>    <a role="button" data-toggle="collapse" href="#commit_'+commit.sha+'" aria-expanded="false" aria-controls="commit_'+commit.sha+'">Details</a></div></div>' +
+'      <div class="panel-heading">'+ commit.subject +'<div style="float:right;"><a href="http://git.openstack.org/cgit/openstack/designate/commit/?id='+commit.sha+'"><code>'+ commit.sha +'</code></a>    <a role="button" data-toggle="collapse" href="#commit_'+commit.sha+'" aria-expanded="false" aria-controls="commit_'+commit.sha+'">Details</a></div></div>' +
 '      <div class="panel-body collapse" id="commit_'+commit.sha+'">' +
 make_commit_body(commit) +
 '      </div>' +
