@@ -1,0 +1,1 @@
+git log --no-merges origin/stable/kilo..origin/master | grep Bug | sed "s/.*[^0-9]//" | sort | uniq | xargs -L 1 -Ix http GET https://api.launchpad.net/1.0/bugs/x > bugs.js
